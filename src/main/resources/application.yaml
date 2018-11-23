@@ -1,0 +1,27 @@
+server:
+  context-path: /Auction
+  jsp-servlet:
+    init-parameters:
+      development: true
+  port: 8082
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: hr
+    password: 123
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  http:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 100Mb
+    encoding:
+      charset: utf-8
+      force: true
+mybatis:
+  type-aliases-package: com.zzy.entity
+  mapper-locations: Mapper/*Mapper.xml
